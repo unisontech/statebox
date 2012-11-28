@@ -25,7 +25,8 @@
 -type timestamp() :: integer().
 -type timedelta() :: integer().
 -type basic_op() :: {module(), atom(), [term()]} |
-                    {fun((...) -> statebox()), [term()]}.
+%%                    {fun((...) -> statebox()), [term()]}. %dialyzer fail
+                    {fun(), [term()]}.
 -type op() :: basic_op() | [op()].
 
 %% Used in a test, must be done before function definitions.
